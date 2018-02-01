@@ -26,8 +26,8 @@ def check(lines):
     result = list()
 
     for line in lines:
-        pp1 = re.findall(r'(\d\d)(\s|\/)(\d\d|\d)(\s|\/)(\d\d\d\d)', line)
-        for i in pp1:
+        pp11 = re.findall(r'(\d\d|\d)(\s|\/)(\d\d|\d)(\s|\/)(\d\d\d\d)', line)
+        for i in pp11:
             line = line.replace(''.join(i),'')
         pp21 = re.findall(r'(January|February|March|April|May|June|July|August|September|October|November|December|JANURAY|FEBRUARY|MARCH|APRIL|MAY|JUNE|JULY|AUGUST|SEPTEMBER|OCTOBER|NOVEMBER|DECEMBER)(\s|\, |\. )(\d\d|\d)(\s|\, |\. )(\d\d\d\d)', line)
         for i in pp21:
@@ -59,7 +59,7 @@ def check(lines):
         pp8 = re.findall(r'New Year\'s Day|New Year|NEW YEAR|Martin Luther King Day|Easter|Mother\'s Day|Memorial Day|Father\'s Day|Independence Day|Labor Day|Columbus Day|Halloween|HALLOWEEN|Veterans Day|Thanksgiving Day|Thanksgiving|THANKSGIVING|Christmas|CHRISTMAS', line)
         for i in pp8:
             line = line.replace(''.join(i),'')
-        temp = [pp1, pp21, pp22, pp23, pp24, pp3, pp4, pp5, pp6, pp7, pp8]
+        temp = [pp11, pp21, pp22, pp23, pp24, pp3, pp4, pp5, pp6, pp7, pp8]
         for i in temp:
             if len(i) != 0:
                 for j in i:
